@@ -29,7 +29,7 @@ int[,] GetArray(int rows, int columns) {
     {
         for (int j = 0; j < columns; j++)
         {
-            array[i, j] = random.Next(-1000, 1000);
+            array[i, j] = random.Next(-100, 100);
         }
     }
     return array;
@@ -57,8 +57,8 @@ void GetAverage(int[,] array) {
         for (int j = 0; j < array.GetLength(0); j++) {
             sum = sum + array[j, i];
         }
-        average = sum/array.GetLength(0);
-        Console.Write("{0,6}", average);
+        average = (double)sum/array.GetLength(0);
+        Console.Write("{0,6}", Math.Round(average, 1));
     }
 }
 
